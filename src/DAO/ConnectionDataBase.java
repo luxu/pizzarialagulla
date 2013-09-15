@@ -13,7 +13,7 @@ public class ConnectionDataBase {
     private static final String URL = "jdbc:mysql://localhost:3306/boteko";//caminho
     private static final String DRIVER = "com.mysql.jdbc.Driver";//driver padrão do mysql arquivo .jar
     private static final String USER = "root"; //usuario
-    private static final String PASS = "iu00q71o";//senha
+    private static final String PASS = "";//senha
 
     public static Connection getConnection() {
         try {

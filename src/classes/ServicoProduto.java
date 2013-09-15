@@ -18,15 +18,11 @@ public class ServicoProduto {
         while (resultsetSelect.next()) {
             produtos.add(recuperarObjeto(resultsetSelect));
         }
-//        for (Produto produto : produtos) {
-//            System.out.println("Código: "+produto.getProCodigo()+" - Descrição: "+produto.getProDescricao());
-//        }
         return produtos;
     }
 
     private Produto recuperarObjeto(ResultSet resultsetSelect) throws SQLException {
         Produto produto = new Produto();
-//        produto.setProCodigo(resultsetSelect.getInt("pro_codigo"));
         produto.setProDescricao(resultsetSelect.getString("pro_descricao"));
         return produto;
     }

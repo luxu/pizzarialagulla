@@ -15,7 +15,7 @@ public class Restaurar {
 
     private int res;
     private String arq;
-    private String snh = "iu00q71o";
+    private String snh = "";
     private String banco = "boteko";
     private File bkp;
     private Process proc = null;
@@ -27,10 +27,9 @@ public class Restaurar {
         if (chooser.getSelectedFile().isFile()){
             bkp = chooser.getSelectedFile();
             arq = bkp.getPath();
-//            String comando = "C:\\Program Files (x86)\\MySQL\\MySQL Server 5.1\\bin\\mysql";
             String comando = "C:\\Program Files (x86)\\MySQL\\MySQL Server 5.1\\bin\\mysql";
             ProcessBuilder pb = new ProcessBuilder(comando,
-                    " --user=root --password=iu00q71o boteko --execute='source D:\\SDO-Backup\\bkp_boteko.sql'");
+                    " --user=root --password= boteko --execute='source D:\\SDO-Backup\\bkp_boteko.sql'");
             try {
                 pb.start();
             } catch (IOException ex) {
