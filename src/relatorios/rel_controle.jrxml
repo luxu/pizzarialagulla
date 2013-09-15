@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5b5e542f-6c46-4ca2-8ac2-89d72af6e9de">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[SELECT
+     *
+FROM
+     `controle` controle]]>
+	</queryString>
+	<field name="con_codigo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="con_data" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="con_despesasDoDia" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="con_totalVendasDia" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="con_vendasCartaoDia" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="con_vendasDinheiroDia" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="con_totalPizzaVendidaDia" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="con_totalPizzaEntregueDia" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="con_valorNotaFiscal" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="con_codigo">
+		<groupExpression><![CDATA[$F{con_codigo}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="147" splitType="Stretch">
+			<frame>
+				<reportElement uuid="baad3c08-3b95-44a3-b2ff-89f22422814b" mode="Opaque" x="0" y="105" width="555" height="32" forecolor="#000000" backcolor="#CC0000"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="7c71932c-b7eb-4a22-8e47-8c9509ccc744" x="409" y="12" width="144" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement uuid="ba382f06-db8a-4b47-b587-ae3d725c695e" mode="Opaque" x="2" y="0" width="555" height="95" backcolor="#000000"/>
+				<staticText>
+					<reportElement uuid="518f1e66-a325-49f9-a8c5-0a8d4faf5dab" style="Title" x="78" y="0" width="331" height="66"/>
+					<textElement textAlignment="Center">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Controle Diário]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="137">
+			<textField pattern="¤ #,##0.00">
+				<reportElement uuid="9010b88f-5461-48ef-8e30-83999004162f" x="130" y="34" width="97" height="26" forecolor="#000000"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{con_despesasDoDia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="c268d0a8-9a43-4f89-873c-782877a2038e" x="0" y="34" width="130" height="26"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Despesas do DIA]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00">
+				<reportElement uuid="50b866fa-9a5b-446e-a4e5-d9eba5bc547a" x="397" y="60" width="80" height="22" forecolor="#000000"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{con_vendasCartaoDia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="407dd4dd-06b3-4b8a-89f6-4d39580ec6dc" x="232" y="60" width="165" height="22"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vendas no CARTÃO]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="eed4ea5d-1a58-45fd-a09c-2b1fe18762cc" x="130" y="56" width="97" height="26" forecolor="#000000"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{con_totalPizzaVendidaDia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="df3ead48-8929-4b97-83db-1bebb6c369fa" x="2" y="56" width="128" height="26"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pizzas Vendidas]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="69178bdd-ffa0-4ad2-9571-ce6c0f7f6932" x="130" y="82" width="97" height="26" forecolor="#000000"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{con_totalPizzaEntregueDia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="7d3da92b-d368-4e97-b735-a5ce4aabaedf" x="2" y="82" width="128" height="26"/>
+				<textElement verticalAlignment="Top">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Entregas]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00">
+				<reportElement uuid="68fc7a46-70aa-40ca-8c24-6304d57daf1e" x="397" y="86" width="80" height="26" forecolor="#000000"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{con_vendasCartaoDia}+$F{con_vendasDinheiroDia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5698e8e7-67c7-44c2-9cdf-86398c5033a8" x="232" y="86" width="165" height="26"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de VENDAS]]></text>
+			</staticText>
+			<frame>
+				<reportElement uuid="0fd9bc4c-eebc-4374-8352-889e6dd711c0" mode="Opaque" x="233" y="82" width="244" height="4" forecolor="#B89F7D" backcolor="#000000"/>
+			</frame>
+			<staticText>
+				<reportElement uuid="b898ec66-3852-488b-962e-ee18946ef07e" x="232" y="34" width="165" height="22"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vendas no DINHEIRO]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00">
+				<reportElement uuid="380b4fbf-fc56-4c3e-816c-a49efcb5060a" x="397" y="34" width="80" height="22" forecolor="#000000"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{con_vendasDinheiroDia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ff01ebe3-71b3-4bfc-9c61-3ab4864ce62a" x="2" y="108" width="128" height="26"/>
+				<textElement verticalAlignment="Top">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nota Fiscal]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="91857b72-22ac-42c1-a2a3-f6e5eb35f58a" x="130" y="108" width="97" height="26" forecolor="#000000"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{con_valorNotaFiscal}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement uuid="908cff90-6007-4d92-82e5-bf7d14ce767e" mode="Opaque" x="0" y="0" width="553" height="24" forecolor="#B89F7D" backcolor="#000000"/>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+					<reportElement uuid="04bc2186-ad4e-4621-8bdf-370d7e9a2c8d" style="SubTitle" isPrintRepeatedValues="false" x="2" y="0" width="479" height="24" forecolor="#FFFFFF"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{con_data}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="28" splitType="Stretch">
+			<frame>
+				<reportElement uuid="fe9b1592-334c-4c45-8fed-57b7bb2df5cf" mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="c5caba37-488a-40b3-804a-83cc88a21d57" style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="77c25751-ff0b-472e-88db-cb8623dc8302" style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="c5b62320-f3d5-49bd-83b9-9e72af8dcb94" style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
