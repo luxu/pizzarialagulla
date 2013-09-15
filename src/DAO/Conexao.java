@@ -15,7 +15,7 @@ public class Conexao {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/boteko";
-            connect = DriverManager.getConnection(url, "root", "iu00q71o");
+            connect = DriverManager.getConnection(url, "root", "");
         } catch (ClassNotFoundException cnfex) {
             erro = "Falha ao ler o driver JDBC" + cnfex.toString();
             System.out.println(erro);
