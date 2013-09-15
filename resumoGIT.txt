@@ -1,0 +1,33 @@
+﻿﻿HEAD - Última Revisão
+BRANCHES - cópia do projeto
+TRUNKS - Rota que precisa ser quebrada para conserto de bugs ou modificar layouts.
+COMMIT - Ao termino das tarefas é geradi um pto de referência dos arquivos modificados.
+LOGS - Serve para nos mostrar exatamente o que foi realizado naquele commit.
+DIFFS - Serve para comparar duas versões de um arquivo para em caso de erro após mudanças saber de onde ser origina o mesmo.
+ROLLBACK - Serve para voltar depois de alguma modificação.
+MERGE - Quando se editar o mesmo arquivo, e a mudança se der em linhas diferentes é feita a mesclagem, caso contrário, ou seja o mesmo arquivo e na mesma linha o segundo q comitar é o que estará valendo. restando os devs envolvidos conversarem para chegar a um denominador comum.
+ÁREAS DE OPERAÇÃO - Working Directory, Stage Area, Git directory. Enquanto estão sendo editados ou modificados eles transitam nessas 3 áreas. Conhecendo cada uma delas:
+Git Directory -> onde ficam guardados os dados e objetos do projeto, qdo se clona um projeto é ele que vai para o local escolhido.
+Work Directory -> seria nossa área de trabalho, ficando todos os arquivos para podermos alterar e usar.
+Stage Area -> Quando se faz uma alteração e prepara-o para o comitar ele fica nessa área.
+-------------------------------------------------------------------------------------------------------------------
+Comandos do GIT
+// Configurações Iniciais sempre que fizer uma nova instalação do GIT
+git config --global user.name "luxu"
+git config --global user.email "zicadopv@gmail.com"
+// Pasta escolhida para INICIAR O CONTROLE 
+git init
+// Mandando um commit para o GIT
+git commit -m "Primeiro commit"
+// Para trazer as modificações do repositório 
+git pull
+// Para enviar os arquivos comitados para o repositório
+git push
+// Caso o arquivo não existia no último commit, não está sendo monitorado
+Untracked files
+// Para monitorar um arquivo ou todos
+git add *
+// que significa que um arquivo monitorado foi modificado no diretório de trabalho mas ainda não foi selecionado (staged)
+Changes not staged for commit
+// mostra as linhas exatas que foram adicionadas e removidas mudanças que você fez que ainda não foram selecionadas.
+git diff 
