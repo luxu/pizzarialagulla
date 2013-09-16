@@ -1,13 +1,14 @@
-Meu Projeto Pizzaria La Gulla
+Projeto: Pizzaria La Gulla
 ====================
 
-Sistema para a Pizzaria La Gulla onde será feito:
-- Cadastro de Cliente
-- Cadastro de Bairro
-- Cadastro de Usuário
-- Cadastro de Produto
+Realizações:
+- Cadastro: Cliente
+- Cadastro: Bairro
+- Cadastro: Usuário
+- Cadastro: Produto
 - Movimentação: Abertura de Pedidos
 - Movimentação: Fechamento de Pedidos
+- Movimentação: Controle Diário
 - Relatório: Cliente
 - Relatório: Produto
 - Relatório: Bairro
